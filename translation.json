@@ -9,7 +9,258 @@
       "-1": null,
       "0": 0,
       "1": "value"
-    }
+    },
+    "_comment": "Any comments"
   },
-  "translations": []
+  "translations": [
+    {
+      "key": "family_income",
+      "location": {
+        "start": 39,
+        "end": 40
+      },
+      "value_map": {
+        "01": 0,
+        "02": 5000,
+        "03": 7500,
+        "04": 10000,
+        "05": 12500,
+        "06": 15000,
+        "07": 20000,
+        "08": 25000,
+        "09": 30000,
+        "10": 35000,
+        "11": 40000,
+        "12": 50000,
+        "13": 60000,
+        "14": 75000,
+        "15": 100000,
+        "16": 150000
+      },
+      "_comment": "Represents minimum value in range"
+    },
+    {
+      "key": "state",
+      "location": {
+        "start": 93,
+        "end": 94
+      },
+      "value_map": {
+        "01": "AL",
+        "02": "AK",
+        "04": "AZ",
+        "05": "AR",
+        "06": "CA",
+        "08": "CO",
+        "09": "CT",
+        "10": "DE",
+        "11": "DC",
+        "12": "FL",
+        "13": "GA",
+        "15": "HI",
+        "16": "ID",
+        "17": "IL",
+        "18": "IN",
+        "19": "IA",
+        "20": "KS",
+        "21": "KY",
+        "22": "LA",
+        "23": "ME",
+        "24": "MD",
+        "25": "MA",
+        "26": "MI",
+        "27": "MN",
+        "28": "MS",
+        "29": "MO",
+        "30": "MT",
+        "31": "NE",
+        "32": "NV",
+        "33": "NH",
+        "34": "NJ",
+        "35": "NM",
+        "36": "NY",
+        "37": "NC",
+        "38": "ND",
+        "39": "OH",
+        "40": "OK",
+        "41": "OR",
+        "42": "PA",
+        "44": "RI",
+        "45": "SC",
+        "46": "SD",
+        "47": "TN",
+        "48": "TX",
+        "49": "UT",
+        "50": "VT",
+        "51": "VA",
+        "53": "WA",
+        "54": "WV",
+        "55": "WI",
+        "56": "WY"
+      }
+    },
+    {
+      "key": "met_status",
+      "location": {
+        "start": 105,
+        "end": 105
+      },
+      "value_map": {
+        "01": "metropolitan",
+        "02": "nonmetropolitan",
+        "03": null
+      }
+    },
+    {
+      "key": "age",
+      "location": {
+        "start": 122,
+        "end": 123
+      },
+      "value_map": {},
+      "_comment": "No value map, will directly translate"
+    },
+    {
+      "key": "marital_status",
+      "location": {
+        "start": 125,
+        "end": 126
+      },
+      "value_map": {
+        "-1": null,
+        "01": "married - spouse present",
+        "02": "married - spouse absent",
+        "03": "widowed",
+        "04": "divorced",
+        "05": "seperated",
+        "06": "never married"
+      }
+    },
+    {
+      "key": "sex",
+      "location": {
+        "start": 129,
+        "end": 130
+      },
+      "value_map": {
+        "-1": null,
+        "01": "male",
+        "02": "female"
+      }
+    },
+    {
+      "key": "highest_education",
+      "location": {
+        "start": 137,
+        "end": 138
+      },
+      "value_map": {
+        "31": "1st grade",
+        "32": "4th grade",
+        "33": "6th grade",
+        "34": "8th grade",
+        "35": "9th grade",
+        "36": "10th grade",
+        "37": "11th grade",
+        "38": "12th grade",
+        "39": "high school",
+        "40": "some college",
+        "41": "associate vocational",
+        "42": "associate academic",
+        "43": "bachelor",
+        "44": "master",
+        "45": "professional",
+        "46": "doctorate"
+      }
+    },
+    {
+      "key": "race",
+      "location": {
+        "start": 139,
+        "end": 140
+      },
+      "value_map": {
+        "-1": null,
+        "01": "white",
+        "02": "black",
+        "03": "american indian",
+        "04": "asian",
+        "05": "pacific islander",
+        "06": "white-black",
+        "07": "white-AI",
+        "08": "white-asian",
+        "09": "white-HP",
+        "10": "black-AI",
+        "11": "black-asian",
+        "12": "black-HP",
+        "13": "AI-asian",
+        "14": "AI-HP",
+        "15": "asian-HP",
+        "16": "W-B-AI",
+        "17": "W-B-A",
+        "18": "W-B-HP",
+        "19": "W-AI-W",
+        "20": "W-AI-HP",
+        "21": "W-A-HP",
+        "22": "B-AI-A",
+        "23": "W-B-AI-A",
+        "24": "W-AI-A-HP",
+        "25": "Other 3 Race",
+        "26": "4 or more races"
+      }
+    },
+    {
+      "key": "citizenship",
+      "location": {
+        "start": 172,
+        "end": 173
+      },
+      "value_map": {
+        "-1": null,
+        "01": "native, born US",
+        "02": "native, born colonies",
+        "03": "native, born abroad",
+        "04": "naturalized",
+        "05": "noncitizen"
+      }
+    },
+    {
+      "key": "student",
+      "location": {
+        "start": 575,
+        "end": 576
+      },
+      "value_map": {
+        "-1": null,
+        "01": "yes",
+        "02": "no"
+      }
+    },
+    {
+      "key": "voter_interviewed",
+      "location": {
+        "start": 1001,
+        "end": 1002
+      },
+      "value_map": {
+        "-1": null,
+        "01": "yes",
+        "02": "no"
+      }
+    },
+    {
+      "key": "voted",
+      "location": {
+        "start": 1003,
+        "end": 1004
+      },
+      "value_map": {
+        "-1": null,
+        "01": "yes",
+        "02": "no",
+        "-2": "don't know",
+        "-3": "refused"
+      }
+    }
+  ]
 }
