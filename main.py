@@ -100,11 +100,64 @@ def get_translation_info(trans_fh: FileIO) -> list[dict]:
 
 
 def make_csv_header(translation_info: list[dict]) -> str:
-    """ """
+    """
+    Extracts the keys from the translation file and makes the
+    csv header line in the same order
+    @param translation_info: List of translation dictionary items
+    @return: csv header line of the keys
+    """
+    return ",".join([tr["key"] for tr in translation_info])
 
 
 def translate_lines(lines: list[str], translation_info: list[dict]) -> list[str]:
-    """ """
+    """
+    Translates the info from the input lines according to the available translations
+    Gives a warning if a value is not found in the value_map and copies it verbatim
+    Raises an exception if the start/end locations do not properly exist
+    O(n * m)
+    @param lines: Input data lines
+    @param translation_info: List of translation dictionary items
+    @return: list of csv line strings
+    """
+
+    # holds final output strings
+    out = []
+
+    for i, line in enumerate(lines):
+
+        # holds translated values for this line
+        line_vals = []
+
+        for tr in translation_info:
+            loc = tr["location"]
+            value_map = tr["value_map"]
+
+            # get input value location
+            input_value = line[loc["start"] : loc["end"] + 1]
+
+            # check that the location is valid
+            if not input_value:
+                # empty str, start/end locations do not exist
+                raise ValueError(
+                    f"Location for {tr['key']} does not exist for line {i}"
+                )  # TODO: better exception
+
+            # check that the value is in the value_map and convert
+            if input_value in value_map:
+                line_vals.append(value_map[input_value])
+            else:
+                # else append original value
+                line_vals.append(input_value)
+                # and warn if the value_map had anything at all
+                if value_map:
+                    print(
+                        f"WARNING: Line {i} missing translation for {tr['key']}: {input_value}"
+                    )
+
+        # combine translated values
+        out.append(",".join(line_vals))
+
+    return out
 
 
 def get_args():
