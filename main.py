@@ -12,27 +12,98 @@ Format specified in README.md
 """
 
 import argparse
-import io
+from io import FileIO
 from pathlib import Path
+import json
 
 
-def get_filehandle(path: str, mode: str) -> io.FileIO:
-    """ """
+def get_filehandle(path: str, mode: str) -> FileIO:
+    """
+    Gets the filehandle for the provided path with the provided mode.
+    If the path does not exist and the file is opened in read-only mode, OSError is raised
+    If the mode is not valid, ValueError is raised
+    @param path: The location of the file we want to open
+    @param mode: The mode to open the file with
+    @return: Filehandler with appropriate mode
+    """
+
+    try:
+        filehandle = open(path, mode, encoding="utf-8")
+    except FileNotFoundError as error:
+        # incorrect file path for mode
+        raise OSError(f"Incorrect mode {mode} for path {path}") from error
+    except ValueError as error:
+        # incorrect mode
+        raise ValueError(f"Incorrect mode {mode}") from error
+
+    return filehandle
 
 
-def get_input_lines(in_fh: io.FileIO) -> list[str]:
-    """ """
+def get_input_lines(in_fh: FileIO) -> list[str]:
+    """
+    Reads the input filehandle and returns the lines, stripped, in a list
+    @param in_fh: Filehandle for input
+    @return: List of lines from file
+    """
+    return [l.strip() for l in in_fh.readlines()]
 
 
-def get_translation_info(path_fh: io.FileIO) -> list[dict]:
-    """ """
+class MissingFieldError(Exception):
+    """
+    Error to represent a missing field
+    """
+
+
+def _check_translation_item(tr: dict) -> None:
+    """
+    Checks that the translation item has the fields:
+        * key
+        * location with start and end
+        * value_map
+    Raises an exception if not
+    @param tr: translation item
+    """
+
+    top_level_fields = ["key", "location", "value_map"]
+    location_fields = ["start", "end"]
+
+    try:
+        if (
+            top_level_fields
+            and tr.keys() != top_level_fields
+            or location_fields
+            and tr["location"].keys() != location_fields
+        ):
+            raise MissingFieldError
+    except Exception as e:
+        raise MissingFieldError(
+            "Bad translation file: Item(s) missing fields(s)"
+        ) from e
+
+
+def get_translation_info(trans_fh: FileIO) -> list[dict]:
+    """
+    Reads the translation from the json and returns the translations dict-list
+    Checks that file includes all the necessary fields, raises exception if not
+    @param trans_fh: Filehandle for the translation json
+    @return: List of dictionaries of translation
+    """
+    input_json = json.load(trans_fh)
+    if "translations" not in input_json:
+        raise MissingFieldError("Bad translation file: Missing 'translations' field")
+
+    translation_info = input_json["translations"]
+    for tr in translation_info:
+        _check_translation_item(tr)
+
+    return translation_info
 
 
 def make_csv_header(translation_info: list[dict]) -> str:
     """ """
 
 
-def translate_lines(lines: list[str], translation_info: list[dict]) -> str:
+def translate_lines(lines: list[str], translation_info: list[dict]) -> list[str]:
     """ """
 
 
