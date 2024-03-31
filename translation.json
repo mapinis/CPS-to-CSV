@@ -1,0 +1,15 @@
+{
+  "_template": {
+    "key": "NBER_KEY",
+    "location": {
+      "start": -1,
+      "end": 0
+    },
+    "value_map": {
+      "-1": null,
+      "0": 0,
+      "1": "value"
+    }
+  },
+  "translations": []
+}
