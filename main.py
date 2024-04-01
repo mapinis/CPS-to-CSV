@@ -64,15 +64,12 @@ def _check_translation_item(tr: dict) -> None:
     @param tr: translation item
     """
 
-    top_level_fields = ["key", "location", "value_map"]
-    location_fields = ["start", "end"]
+    top_level_fields = {"key", "location", "value_map"}
+    location_fields = {"start", "end"}
 
     try:
-        if (
-            top_level_fields
-            and tr.keys() != top_level_fields
-            or location_fields
-            and tr["location"].keys() != location_fields
+        if (top_level_fields & set(tr.keys()) != top_level_fields) or (
+            location_fields & set(tr["location"].keys()) != location_fields
         ):
             raise MissingFieldError
     except Exception as e:
@@ -133,7 +130,7 @@ def translate_lines(lines: list[str], translation_info: list[dict]) -> list[str]
             value_map = tr["value_map"]
 
             # get input value location
-            input_value = line[loc["start"] : loc["end"] + 1]
+            input_value = line[loc["start"] - 1 : loc["end"]]
 
             # check that the location is valid
             if not input_value:
@@ -155,7 +152,7 @@ def translate_lines(lines: list[str], translation_info: list[dict]) -> list[str]
                     )
 
         # combine translated values
-        out.append(",".join(line_vals))
+        out.append(",".join(line_vals) + "\n")
 
     return out
 

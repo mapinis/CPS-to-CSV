@@ -6,9 +6,9 @@
       "end": 0
     },
     "value_map": {
-      "-1": null,
-      "0": 0,
-      "1": "value"
+      "-1": "NA",
+      " 0": "0",
+      " 1": "value"
     },
     "_comment": "Any comments, start and end are both inclusive"
   },
@@ -20,22 +20,23 @@
         "end": 40
       },
       "value_map": {
-        "01": 0,
-        "02": 5000,
-        "03": 7500,
-        "04": 10000,
-        "05": 12500,
-        "06": 15000,
-        "07": 20000,
-        "08": 25000,
-        "09": 30000,
-        "10": 35000,
-        "11": 40000,
-        "12": 50000,
-        "13": 60000,
-        "14": 75000,
-        "15": 100000,
-        "16": 150000
+        "-1": "NA",
+        " 1": "0",
+        " 2": "5000",
+        " 3": "7500",
+        " 4": "10000",
+        " 5": "12500",
+        " 6": "15000",
+        " 7": "20000",
+        " 8": "25000",
+        " 9": "30000",
+        "10": "35000",
+        "11": "40000",
+        "12": "50000",
+        "13": "60000",
+        "14": "75000",
+        "15": "100000",
+        "16": "150000"
       },
       "_comment": "Represents minimum value in range"
     },
@@ -46,13 +47,13 @@
         "end": 94
       },
       "value_map": {
-        "01": "AL",
-        "02": "AK",
-        "04": "AZ",
-        "05": "AR",
-        "06": "CA",
-        "08": "CO",
-        "09": "CT",
+        " 1": "AL",
+        " 2": "AK",
+        " 4": "AZ",
+        " 5": "AR",
+        " 6": "CA",
+        " 8": "CO",
+        " 9": "CT",
         "10": "DE",
         "11": "DC",
         "12": "FL",
@@ -106,9 +107,9 @@
         "end": 105
       },
       "value_map": {
-        "01": "metropolitan",
-        "02": "nonmetropolitan",
-        "03": null
+        "1": "metropolitan",
+        "2": "nonmetropolitan",
+        "3": "NA"
       }
     },
     {
@@ -127,13 +128,13 @@
         "end": 126
       },
       "value_map": {
-        "-1": null,
-        "01": "married - spouse present",
-        "02": "married - spouse absent",
-        "03": "widowed",
-        "04": "divorced",
-        "05": "seperated",
-        "06": "never married"
+        "-1": "NA",
+        " 1": "married_spouse_present",
+        " 2": "married_spouse_absent",
+        " 3": "widowed",
+        " 4": "divorced",
+        " 5": "seperated",
+        " 6": "never_married"
       }
     },
     {
@@ -143,9 +144,9 @@
         "end": 130
       },
       "value_map": {
-        "-1": null,
-        "01": "male",
-        "02": "female"
+        "-1": "NA",
+        " 1": "male",
+        " 2": "female"
       }
     },
     {
@@ -155,18 +156,19 @@
         "end": 138
       },
       "value_map": {
-        "31": "1st grade",
-        "32": "4th grade",
-        "33": "6th grade",
-        "34": "8th grade",
-        "35": "9th grade",
-        "36": "10th grade",
-        "37": "11th grade",
-        "38": "12th grade",
-        "39": "high school",
-        "40": "some college",
-        "41": "associate vocational",
-        "42": "associate academic",
+        "-1": "NA",
+        "31": "1st_grade",
+        "32": "4th_grade",
+        "33": "6th_grade",
+        "34": "8th_grade",
+        "35": "9th_grade",
+        "36": "10th_grade",
+        "37": "11th_grade",
+        "38": "12th_grade",
+        "39": "high_school",
+        "40": "some_college",
+        "41": "associate_vocational",
+        "42": "associate_academic",
         "43": "bachelor",
         "44": "master",
         "45": "professional",
@@ -180,16 +182,16 @@
         "end": 140
       },
       "value_map": {
-        "-1": null,
-        "01": "white",
-        "02": "black",
-        "03": "american indian",
-        "04": "asian",
-        "05": "pacific islander",
-        "06": "white-black",
-        "07": "white-AI",
-        "08": "white-asian",
-        "09": "white-HP",
+        "-1": "NA",
+        " 1": "white",
+        " 2": "black",
+        " 3": "american_indian",
+        " 4": "asian",
+        " 5": "pacific_islander",
+        " 6": "white-black",
+        " 7": "white-AI",
+        " 8": "white-asian",
+        " 9": "white-HP",
         "10": "black-AI",
         "11": "black-asian",
         "12": "black-HP",
@@ -205,8 +207,8 @@
         "22": "B-AI-A",
         "23": "W-B-AI-A",
         "24": "W-AI-A-HP",
-        "25": "Other 3 Race",
-        "26": "4 or more races"
+        "25": "other_3_Race",
+        "26": "other_4_or_more"
       }
     },
     {
@@ -216,12 +218,12 @@
         "end": 173
       },
       "value_map": {
-        "-1": null,
-        "01": "native, born US",
-        "02": "native, born colonies",
-        "03": "native, born abroad",
-        "04": "naturalized",
-        "05": "noncitizen"
+        "-1": "NA",
+        " 1": "native_born_US",
+        " 2": "native_born_colonies",
+        " 3": "native_born_abroad",
+        " 4": "naturalized",
+        " 5": "noncitizen"
       }
     },
     {
@@ -231,9 +233,9 @@
         "end": 576
       },
       "value_map": {
-        "-1": null,
-        "01": "yes",
-        "02": "no"
+        "-1": "NA",
+        " 1": "yes",
+        " 2": "no"
       }
     },
     {
@@ -243,9 +245,9 @@
         "end": 1002
       },
       "value_map": {
-        "-1": null,
-        "01": "yes",
-        "02": "no"
+        "-1": "NA",
+        " 1": "yes",
+        " 2": "no"
       }
     },
     {
@@ -255,10 +257,10 @@
         "end": 1004
       },
       "value_map": {
-        "-1": null,
-        "01": "yes",
-        "02": "no",
-        "-2": "don't know",
+        "-1": "NA",
+        " 1": "yes",
+        " 2": "no",
+        "-2": "dont_know",
         "-3": "refused"
       }
     }
