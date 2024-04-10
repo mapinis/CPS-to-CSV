@@ -1,2 +1,2 @@
 # CPS-to-CSV
-Python utility to convert Census Community Population Survey data to CSV format
+Python utility to convert Census Current Population Survey data to CSV format
