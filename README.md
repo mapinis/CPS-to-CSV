@@ -1,2 +1,2 @@
-# NBER-to-CSV
-Python utility to convert NBER survey data to CSV format
+# CPS-to-CSV
+Python utility to convert Census Community Population Survey data to CSV format
