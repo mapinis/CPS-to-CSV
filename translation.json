@@ -239,18 +239,6 @@
       }
     },
     {
-      "key": "voter_interviewed",
-      "location": {
-        "start": 1001,
-        "end": 1002
-      },
-      "value_map": {
-        "-1": "NA",
-        " 1": "yes",
-        " 2": "no"
-      }
-    },
-    {
       "key": "voted",
       "location": {
         "start": 1003,
